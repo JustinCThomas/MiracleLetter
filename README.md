@@ -1,2 +1,2 @@
 # MiracleLetter
-Case Study Project for PerScholas Java Developer Program
+Case Study Project for PerScholas/Cognizant Java Developer Program
