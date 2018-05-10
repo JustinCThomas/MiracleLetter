@@ -37,7 +37,7 @@ order_item_id NUMERIC GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) 
 order_id INTEGER NOT NULL,
 letter_template_id INTEGER NOT NULL,
 envelope_id INTEGER NOT NULL,
-price_per_item NUMBER(10,2) NOT NULL,
+price_of_item NUMBER(10,2) NOT NULL,
 address_of_recipient VARCHAR(255) NOT NULL,
 CONSTRAINT order_item_pk PRIMARY KEY (order_item_id),
 CONSTRAINT order_id_fk FOREIGN KEY(order_id) REFERENCES Order_Table(order_id),
