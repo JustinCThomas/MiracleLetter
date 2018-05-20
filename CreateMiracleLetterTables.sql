@@ -40,7 +40,7 @@ envelope_id INTEGER NOT NULL,
 price_of_item NUMBER(10,2) NOT NULL,
 address_of_recipient VARCHAR(255) NOT NULL,
 CONSTRAINT order_item_pk PRIMARY KEY (order_item_id),
-CONSTRAINT order_id_fk FOREIGN KEY(order_id) REFERENCES Order_Table(order_id),
+CONSTRAINT order_id_fk FOREIGN KEY(order_id) REFERENCES Order_Table(order_id) ON DELETE CASCADE,
 CONSTRAINT letter_template_id_fk FOREIGN KEY(letter_template_id) REFERENCES Letter_template(letter_template_id),
 CONSTRAINT envelope_id_fk FOREIGN KEY(envelope_id) REFERENCES Envelope(envelope_id)
 );
