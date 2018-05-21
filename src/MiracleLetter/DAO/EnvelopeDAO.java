@@ -6,26 +6,28 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import CoreJava.systemInterfaces.LetterTemplateDAOI;
-import MiracleLetter.Models.LetterTemplate;
+import CoreJava.systemInterfaces.EnvelopeDAOI;
+import MiracleLetter.Models.Envelope;
 import utils.OracleQueries;
 
-public class LetterTemplateDAO implements LetterTemplateDAOI {
-	public LetterTemplate getLetterTemplateByName(String name) throws SQLException {
-		LetterTemplate letterTemplate = null;
+public class EnvelopeDAO implements EnvelopeDAOI {
+
+	public Envelope getEnvelopeById(int id) throws SQLException {
+		Envelope envelope = null;
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet result = null;
 		
 		try {
 			conn = OracleConnection.getConnection();
-			stmt = conn.prepareStatement(OracleQueries.LETTERTEMPLATEBYNAME);
-			stmt.setString(1, name);
+			stmt = conn.prepareStatement(OracleQueries.ENVELOPEBYID);
+			stmt.setInt(1, id);
 			result = stmt.executeQuery();
 			
 			if (result.next()) {
-				letterTemplate = new LetterTemplate(result.getInt(1), name,
-						result.getString(3), result.getDouble(4));
+				envelope = new Envelope(id, result.getString(2),
+						result.getString(3), result.getString(4), 
+						result.getDouble(5));
 				System.out.println("Envelope has been created.");
 			}
 			
@@ -42,8 +44,7 @@ public class LetterTemplateDAO implements LetterTemplateDAOI {
 				conn.close();
 			}
 		}
-		return letterTemplate;
+		return envelope;
 	}
-
 
 }
