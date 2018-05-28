@@ -17,7 +17,6 @@ CONSTRAINT letter_template_pk PRIMARY KEY(letter_template_id)
 CREATE TABLE Envelope(
 envelope_id NUMERIC GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL,
 envelope_type VARCHAR2(255) NOT NULL,
-envelope_size VARCHAR2(255) NOT NULL,
 envelope_color VARCHAR2(255) NOT NULL,
 envelope_price NUMBER(10,2) NOT NULL,
 CONSTRAINT envelope_pk PRIMARY KEY(envelope_id)
