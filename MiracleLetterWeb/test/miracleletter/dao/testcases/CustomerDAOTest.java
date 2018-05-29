@@ -21,7 +21,7 @@ public class CustomerDAOTest {
 	public void testPrep() {
 		cDAO = new CustomerDAO();
 		customer = new Customer();	
-		customer.setCustomer_id(4);
+		customer.setCustomer_id(1);
 		customer.setEmail_address("tim@gmail.com");
 		customer.setPassword("fiveYard");
 		
@@ -42,7 +42,7 @@ public class CustomerDAOTest {
 	}
 	
 //	Comment and uncomment as necessary for register and delete
-	
+//	
 //	@Test
 //	public void registerCustomerTest() throws SQLException {
 //		assertThat(cDAO.registerCustomer(customer2), equalTo(1));

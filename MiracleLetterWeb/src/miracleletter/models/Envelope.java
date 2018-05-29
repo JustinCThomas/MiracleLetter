@@ -3,7 +3,6 @@ package miracleletter.models;
 public class Envelope {
 	private int envelope_id;
 	private String envelope_type;
-	private String envelope_size;
 	private String envelope_color;
 	private double envelope_price;
 	
@@ -12,11 +11,10 @@ public class Envelope {
 		
 	}
 	
-	public Envelope(int envelope_id, String envelope_type, String envelope_size, String envelope_color,
+	public Envelope(int envelope_id, String envelope_type, String envelope_color,
 			double envelope_price) {
 		this.envelope_id = envelope_id;
 		this.envelope_type = envelope_type;
-		this.envelope_size = envelope_size;
 		this.envelope_color = envelope_color;
 		this.envelope_price = envelope_price;
 	}
@@ -35,14 +33,6 @@ public class Envelope {
 
 	public void setEnvelope_type(String envelope_type) {
 		this.envelope_type = envelope_type;
-	}
-
-	public String getEnvelope_size() {
-		return envelope_size;
-	}
-
-	public void setEnvelope_size(String envelope_size) {
-		this.envelope_size = envelope_size;
 	}
 
 	public String getEnvelope_color() {

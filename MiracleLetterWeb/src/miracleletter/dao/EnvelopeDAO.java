@@ -25,9 +25,8 @@ public class EnvelopeDAO implements EnvelopeDAOI {
 			result = stmt.executeQuery();
 			
 			if (result.next()) {
-				envelope = new Envelope(id, result.getString(2),
-						result.getString(3), result.getString(4), 
-						result.getDouble(5));
+				envelope = new Envelope(id, result.getString(2), 
+						result.getString(3), result.getDouble(4));
 				System.out.println("Envelope has been created.");
 			}
 			
