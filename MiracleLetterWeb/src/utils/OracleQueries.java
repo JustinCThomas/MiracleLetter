@@ -31,8 +31,8 @@ public class OracleQueries {
 			+ "ORDER BY date_of_purchase DESC";
 	
 	public final static String PLACEORDER = "INSERT INTO order_table "
-			+ "(customer_id, order_price) "
-			+ "VALUES (?, ?)";
+			+ "(customer_id, order_price, date_of_purchase) "
+			+ "VALUES (?, ?, TO_DATE(?, 'yyyy/mm/dd hh24:mi:ss'))";
 	
 	public final static String DELETEORDER = "DELETE FROM order_table "
 			+ "WHERE order_id = ?";

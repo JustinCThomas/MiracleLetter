@@ -91,6 +91,7 @@ public class OrderTableDAO implements OrderTableDAOI {
 			stmt = conn.prepareStatement(OracleQueries.PLACEORDER);
 			stmt.setInt(1, order.getCustomer_id());
 			stmt.setDouble(2, order.getOrder_price());
+			stmt.setString(3, order.getDate_of_purchase());
 			result = stmt.executeUpdate();
 			
 			if (result != 0) {
