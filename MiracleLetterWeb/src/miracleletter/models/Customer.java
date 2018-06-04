@@ -34,4 +34,29 @@ public class Customer {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Customer other = (Customer) obj;
+		if (customer_id != other.customer_id)
+			return false;
+		if (email_address == null) {
+			if (other.email_address != null)
+				return false;
+		} else if (!email_address.equals(other.email_address))
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
+		return true;
+	}
+
 }

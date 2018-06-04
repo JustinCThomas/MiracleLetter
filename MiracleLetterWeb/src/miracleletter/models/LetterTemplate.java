@@ -50,4 +50,32 @@ public class LetterTemplate {
 	public void setLetter_template_base_price(double letter_template_base_price) {
 		this.letter_template_base_price = letter_template_base_price;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		LetterTemplate other = (LetterTemplate) obj;
+		if (Double.doubleToLongBits(letter_template_base_price) != Double
+				.doubleToLongBits(other.letter_template_base_price))
+			return false;
+		if (letter_template_description == null) {
+			if (other.letter_template_description != null)
+				return false;
+		} else if (!letter_template_description.equals(other.letter_template_description))
+			return false;
+		if (letter_template_id != other.letter_template_id)
+			return false;
+		if (letter_template_name == null) {
+			if (other.letter_template_name != null)
+				return false;
+		} else if (!letter_template_name.equals(other.letter_template_name))
+			return false;
+		return true;
+	}
+	
 }

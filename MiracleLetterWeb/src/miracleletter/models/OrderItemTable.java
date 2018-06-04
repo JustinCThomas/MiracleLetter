@@ -69,5 +69,34 @@ public class OrderItemTable {
 
 	public void setAddress_of_recipient(String address_of_recipient) {
 		this.address_of_recipient = address_of_recipient;
+	}
+	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		OrderItemTable other = (OrderItemTable) obj;
+		if (address_of_recipient == null) {
+			if (other.address_of_recipient != null)
+				return false;
+		} else if (!address_of_recipient.equals(other.address_of_recipient))
+			return false;
+		if (envelope_id != other.envelope_id)
+			return false;
+		if (letter_template_id != other.letter_template_id)
+			return false;
+		if (order_id != other.order_id)
+			return false;
+		if (order_item_id != other.order_item_id)
+			return false;
+		if (Double.doubleToLongBits(price_of_item) != Double.doubleToLongBits(other.price_of_item))
+			return false;
+		return true;
 	}	
+	
 }

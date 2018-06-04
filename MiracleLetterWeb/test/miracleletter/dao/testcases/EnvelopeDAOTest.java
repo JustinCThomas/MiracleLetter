@@ -28,7 +28,6 @@ public class EnvelopeDAOTest {
 	
 	@Test
 	public void getEnvelopeByIdTest() throws SQLException {
-		assertThat(eDAO.getEnvelopeById(1).getEnvelope_color(), equalTo(envelope.getEnvelope_color()));
-		assertThat(eDAO.getEnvelopeById(1).getEnvelope_price(), equalTo(envelope.getEnvelope_price()));
+		assertThat(eDAO.getEnvelopeById(1), equalTo(envelope));
 	}
 }

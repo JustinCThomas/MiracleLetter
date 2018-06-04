@@ -28,11 +28,11 @@ public class OracleQueries {
 	
 	public final static String ALLORDERSBYCUSTOMERID = "SELECT * FROM order_table "
 			+ "WHERE customer_id = ? "
-			+ "ORDER BY date_of_purchase DESC";
+			+ "ORDER BY date_of_purchase DESC, order_id ASC";
 	
 	public final static String PLACEORDER = "INSERT INTO order_table "
 			+ "(customer_id, order_price, date_of_purchase) "
-			+ "VALUES (?, ?, TO_DATE(?, 'yyyy/mm/dd hh24:mi:ss'))";
+			+ "VALUES (?, ?, TO_TIMESTAMP(?, 'yyyy/mm/dd hh24:mi:ss.ff'))";
 	
 	public final static String DELETEORDER = "DELETE FROM order_table "
 			+ "WHERE order_id = ?";

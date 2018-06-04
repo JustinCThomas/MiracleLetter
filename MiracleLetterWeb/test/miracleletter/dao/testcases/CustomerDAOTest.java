@@ -38,7 +38,7 @@ public class CustomerDAOTest {
 	
 	@Test
 	public void getCustomerByEmailTest() throws SQLException {
-		assertThat(cDAO.getCustomerByEmail("tim@gmail.com").getPassword(), equalTo(customer.getPassword()));
+		assertThat(cDAO.getCustomerByEmail("tim@gmail.com"), equalTo(customer));
 	}
 	
 //	Comment and uncomment as necessary for register and delete

@@ -28,7 +28,6 @@ public class LetterTemplateDAOTest {
 	
 	@Test
 	public void getLetterTemplateByNameTest() throws SQLException {
-		assertThat(lDAO.getLetterTemplateByName("sky").getLetter_template_description(), 
-				equalTo(letter.getLetter_template_description()));
+		assertThat(lDAO.getLetterTemplateByName("sky"), equalTo(letter));
 	}
 }

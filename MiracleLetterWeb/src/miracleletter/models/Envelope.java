@@ -50,4 +50,34 @@ public class Envelope {
 	public void setEnvelope_price(double envelope_price) {
 		this.envelope_price = envelope_price;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Envelope other = (Envelope) obj;
+		if (envelope_color == null) {
+			if (other.envelope_color != null)
+				return false;
+		} else if (!envelope_color.equals(other.envelope_color))
+			return false;
+		if (envelope_id != other.envelope_id)
+			return false;
+		if (Double.doubleToLongBits(envelope_price) != Double.doubleToLongBits(other.envelope_price))
+			return false;
+		if (envelope_type == null) {
+			if (other.envelope_type != null)
+				return false;
+		} else if (!envelope_type.equals(other.envelope_type))
+			return false;
+		return true;
+	}
+	
+	
+	
+	
 }
