@@ -61,15 +61,15 @@ CONSTRAINT customer_id_fk FOREIGN KEY(customer_id) REFERENCES Customer(customer_
 
 
 INSERT INTO order_table (customer_id, order_price, date_of_purchase)
-VALUES (1, 8.78, TO_DATE('2018/05/30 11:00:45', 'yyyy/mm/dd hh24:mi:ss'));
+VALUES (1, 8.78, TO_TIMESTAMP('2018-05-30 11:00:45.0', 'yyyy/mm/dd hh24:mi:ss.ff'));
 INSERT INTO order_table (customer_id, order_price, date_of_purchase)
-VALUES (2, 19.06, TO_DATE('2018/05/30 11:00:45', 'yyyy/mm/dd hh24:mi:ss'));
+VALUES (2, 19.06, TO_TIMESTAMP('2018-05-30 11:00:45.0', 'yyyy/mm/dd hh24:mi:ss.ff'));
 INSERT INTO order_table (customer_id, order_price, date_of_purchase)
-VALUES (2, 9.48, TO_DATE('2018/05/30 11:00:45', 'yyyy/mm/dd hh24:mi:ss'));
+VALUES (2, 9.48, TO_TIMESTAMP('2018-05-30 11:00:45.0', 'yyyy/mm/dd hh24:mi:ss.ff'));
 INSERT INTO order_table (customer_id, order_price, date_of_purchase)
-VALUES (2, 8.98, TO_DATE('2018/05/30 11:00:45', 'yyyy/mm/dd hh24:mi:ss'));
+VALUES (2, 8.98, TO_TIMESTAMP('2018-05-30 11:00:45.0', 'yyyy/mm/dd hh24:mi:ss.ff'));
 INSERT INTO order_table (customer_id, order_price, date_of_purchase)
-VALUES (2, 10.28, TO_DATE('2018/05/30 11:00:45', 'yyyy/mm/dd hh24:mi:ss'));
+VALUES (2, 10.28, TO_TIMESTAMP('2018-05-30 11:00:45.0', 'yyyy/mm/dd hh24:mi:ss.ff'));
 
 
 CREATE TABLE Order_Item_Table(
