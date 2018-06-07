@@ -44,7 +44,7 @@ public class OracleQueries {
 			+ "WHERE order_id = ?";
 	
 	public final static String ADDORDERITEM = "INSERT INTO order_item_table "
-			+ "(order_id, letter_template_id, envelope_id, price_of_item, address_of_recipient "
+			+ "(order_id, letter_template_id, envelope_id, price_of_item, address_of_recipient) "
 			+ "VALUES (?, ?, ?, ?, ?)";
 	
 	
