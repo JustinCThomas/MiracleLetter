@@ -91,5 +91,11 @@ INSERT INTO order_item_table (order_id, letter_template_id, envelope_id, price_o
 VALUES (2, 1, 4, 9.78, '1400 Windmill Path');
 INSERT INTO order_item_table (order_id, letter_template_id, envelope_id, price_of_item, address_of_recipient)
 VALUES (2, 3, 6, 9.28, '1620 Fulton Street');
+INSERT INTO order_item_table (order_id, letter_template_id, envelope_id, price_of_item, address_of_recipient)
+VALUES (3, 1, 3, 9.48, '273 Hunts Point');
+INSERT INTO order_item_table (order_id, letter_template_id, envelope_id, price_of_item, address_of_recipient)
+VALUES (4, 3, 3, 8.98, '724 Rochester Road');
+INSERT INTO order_item_table (order_id, letter_template_id, envelope_id, price_of_item, address_of_recipient)
+VALUES (5, 2, 6, 10.28, '542 Pelham Way');
 
 COMMIT;
