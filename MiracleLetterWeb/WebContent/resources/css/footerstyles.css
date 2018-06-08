@@ -1,0 +1,10 @@
+#footer{
+	height: 100px;
+	margin: 0 auto;
+	background-color: olive;
+	font-size: 20px;
+}
+
+#footer a {
+	padding: 0px 20px;
+}
