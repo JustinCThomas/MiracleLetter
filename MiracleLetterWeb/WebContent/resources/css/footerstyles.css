@@ -1,10 +1,14 @@
-#footer{
-	height: 100px;
+footer{
 	margin: 0 auto;
+	position: absolute;
+	bottom: 0;
+	height: 100px;
+	width: 100%;
 	background-color: olive;
 	font-size: 20px;
+	text-align: center;
 }
 
-#footer a {
+footer a {
 	padding: 0px 20px;
 }

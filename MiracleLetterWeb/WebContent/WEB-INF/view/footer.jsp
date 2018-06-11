@@ -3,8 +3,8 @@
 
 <link type="text/css" rel="stylesheet" href="${footerstylesCSS}">
 
-<div id="footer">
-	<a href="about" target="_blank">About Us</a>
-	<a href="contact" target="_blank">Contact Us</a>
-	<a href="faq" target="_blank">FAQ</a>
-</div>
+<footer>
+	<a href="about">About Us</a>
+	<a href="contact">Contact Us</a>
+	<a href="faq">FAQ</a>
+</footer>

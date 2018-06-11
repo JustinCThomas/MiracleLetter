@@ -7,12 +7,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link type="text/css" rel="stylesheet" href="${resetCSS}"/>
-<title>Contact Us</title>
+<title>MiracleLetter - Envelopes</title>
 </head>
 <body>
+
 <%@include file="header.jsp"%>
-	<h1>Contact Us</h1>
-	<form>Form Placeholder</form>
+<h1>Envelopes</h1>
+
 <%@include file="footer.jsp"%>
+
 </body>
 </html>

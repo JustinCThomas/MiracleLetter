@@ -1,7 +1,13 @@
 #header {
-	height: 50px;
+	height: 70px;
 	margin: 0 auto;
-	
+	text-align: initial;
 	background-color: green;
+}
+
+#ml {
 	font-size: 36px;
+	padding: 20px;
+	display: inline-block;
+	text-decoration: none;
 }

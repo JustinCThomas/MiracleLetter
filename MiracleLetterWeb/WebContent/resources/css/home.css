@@ -7,3 +7,11 @@ body {
 h1 {
 	font-size: 36px;
 }
+
+#customize{
+	height: 200px;
+	width: 400px;
+	margin: 0 auto;
+	border-radius: 5%;
+	background-color: slategray;
+}
