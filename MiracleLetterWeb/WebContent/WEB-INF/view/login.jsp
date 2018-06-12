@@ -11,7 +11,7 @@
 <title>MiracleLetter Login</title>
 </head>
 <body>
-	<form:form method="POST" action="/MiracleLetterWeb" modelAttribute="customer">
+	<form:form method="POST" action="processlogin" modelAttribute="customer">
 		<form:label path="email_address">Email</form:label> 
 		<form:input path="email_address" type="text"/>
 		

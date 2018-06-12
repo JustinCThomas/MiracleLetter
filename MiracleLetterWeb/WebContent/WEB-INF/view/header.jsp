@@ -9,7 +9,7 @@
 <div id="header">
 
 	<a id="ml" href="/MiracleLetterWeb">MiracleLetter</a>
-	<div>Hello, you're logged in as </div>
+	<div>Hello, you're logged in as <%=customer %></div>
 	<a href="letters">View Letter Templates</a>
 	<a href="envelopes">View Envelopes</a>
 	<a href="registration">Sign Up</a>
