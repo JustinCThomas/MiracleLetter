@@ -1,12 +1,18 @@
 package miracleletter.homecontroller;
 
+import java.sql.SQLException;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import miracleletter.dao.CustomerDAO;
 import miracleletter.models.Customer;
 
 @Controller
@@ -14,14 +20,27 @@ import miracleletter.models.Customer;
 @SessionAttributes("customer")
 public class HomeController {
 	
-//	@ModelAttribute("customer")
-//	public Customer setUpCustomerForm() {
-//		return new Customer();
-//	}
+	@ModelAttribute("customer")
+	public Customer setUpCustomerForm() {
+		return new Customer();
+	}
 
-	@RequestMapping("/")
-	public ModelAndView displayHomePage() {
+	@RequestMapping(value="/", method=RequestMethod.GET)
+	public ModelAndView displayHomePage(@SessionAttribute(name="customer", required=false) Customer customer) {
 		ModelAndView mav = new ModelAndView("home");
+		return mav;
+	}
+	
+	@RequestMapping(value="/processlogin", method=RequestMethod.POST)
+	public ModelAndView processLogin(@ModelAttribute("customer") Customer customer) throws SQLException {
+		ModelAndView mav = new ModelAndView("home");
+		CustomerDAO cDAO = new CustomerDAO();
+		System.out.println(customer);
+		Customer assignedCustomer = cDAO.getCustomerByEmail(customer.getEmail_address());
+		System.out.println("FSAFASFASFSAFSAFSAFSAFSA");
+		if (cDAO.validateCustomer(assignedCustomer.getPassword(), customer.getPassword())) {
+			mav.addObject("customer", assignedCustomer);
+		}
 		return mav;
 	}
 	
@@ -74,12 +93,8 @@ public class HomeController {
 	}
 	
 	
-	@RequestMapping(value="/login")
-	public ModelAndView displayLoginPage(@SessionAttribute("customer")Customer customer,
-			BindingResult errors) {
-//		if (errors.hasErrors()) {
-//			ModelAndView mav = new ModelAndView("/");
-//		}
+	@RequestMapping("/login")
+	public ModelAndView displayLoginPage(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("login");
 		return mav;
 	}
