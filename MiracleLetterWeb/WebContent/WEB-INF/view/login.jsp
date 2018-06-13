@@ -13,13 +13,13 @@
 <body>
 	<form:form method="POST" action="processlogin" modelAttribute="customer">
 		<form:label path="email_address">Email</form:label> 
-		<form:input path="email_address" type="text"/>
+		<form:input type="text" path="email_address"/>
 		
 		
 		<form:label path="password">Password</form:label>
-		<form:input path="password" type="password"/>
+		<form:input type="password" path="password"/>
 		
-		<input type="submit" value="Submit">
+		<input type="submit" name="submit" value="Submit">
 	
 	</form:form>
 
