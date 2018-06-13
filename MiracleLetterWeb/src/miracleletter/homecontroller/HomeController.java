@@ -3,6 +3,8 @@ package miracleletter.homecontroller;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,22 +27,30 @@ public class HomeController {
 		return new Customer();
 	}
 
-	@RequestMapping(value="/", method=RequestMethod.GET)
-	public ModelAndView displayHomePage(@SessionAttribute(name="customer", required=false) Customer customer) {
+	@RequestMapping(value="/")
+	public ModelAndView displayHomePage() {
 		ModelAndView mav = new ModelAndView("home");
 		return mav;
 	}
 	
 	@RequestMapping(value="/processlogin", method=RequestMethod.POST)
-	public ModelAndView processLogin(@ModelAttribute("customer") Customer customer) throws SQLException {
-		ModelAndView mav = new ModelAndView("home");
+	public ModelAndView processLogin(@ModelAttribute("customer")@Valid Customer customer, HttpServletRequest req) throws SQLException {
+		ModelAndView mav = null;
+				
+		
 		CustomerDAO cDAO = new CustomerDAO();
 		System.out.println(customer);
 		Customer assignedCustomer = cDAO.getCustomerByEmail(customer.getEmail_address());
-		System.out.println("FSAFASFASFSAFSAFSAFSAFSA");
-		if (cDAO.validateCustomer(assignedCustomer.getPassword(), customer.getPassword())) {
-			mav.addObject("customer", assignedCustomer);
+		
+		if (assignedCustomer != null && cDAO.validateCustomer(assignedCustomer.getPassword(), customer.getPassword())) {
+			HttpSession session = null;
+			session = req.getSession();
+			session.setAttribute("customer", customer);
+			mav = new ModelAndView("redirect:/");
+		} else {
+			mav = new ModelAndView("redirect:/login");
 		}
+		
 		return mav;
 	}
 	

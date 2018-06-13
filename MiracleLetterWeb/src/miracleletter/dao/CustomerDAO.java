@@ -21,14 +21,12 @@ public class CustomerDAO implements CustomerDAOI {
 		PreparedStatement stmt = null;
 		ResultSet result = null;
 		
-		System.out.println(email);
 		try {
 			conn = OracleConnection.getConnection();
 			stmt = conn.prepareStatement(OracleQueries.CUSTOMERBYEMAIL);
 			stmt.setString(1, email);
 			result = stmt.executeQuery();
 			
-			System.out.println("FSAFASFSFASF");
 			if (result.next()) {
 				customer = new Customer(result.getInt(1), 
 						result.getString(2), result.getString(3));

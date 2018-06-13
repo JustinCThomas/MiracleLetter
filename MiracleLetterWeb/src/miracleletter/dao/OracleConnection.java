@@ -15,11 +15,14 @@ public class OracleConnection {
 	final Properties prop = new Properties();
 	final InputStream inputStream = OracleConnection.class.getClassLoader()
 			.getResourceAsStream(
-					"miracleLetter/resources/db.properties");
+					"miracleletter/resources/db.properties");
 	prop.load(inputStream);
 	Class.forName(prop.getProperty("driver"));
 	final Connection connection = DriverManager.getConnection(prop.getProperty("url"), 
 			prop.getProperty("user"), prop.getProperty("password"));
+//	Class.forName("oracle.jdbc.driver.OracleDriver");
+//	Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", 
+//			"justin", "password");
 	return connection;
 	}
 }

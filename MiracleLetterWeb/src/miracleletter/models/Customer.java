@@ -61,7 +61,7 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return "Customer [customer_id=" + customer_id + ", email_address=" + email_address + ", password=" + password
+		return "Customer [customer_id=" + customer_id + ", email_address=" + this.getEmail_address() + ", password=" + password
 				+ "]";
 	}
 	
