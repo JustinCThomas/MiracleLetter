@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
@@ -33,26 +34,6 @@ public class HomeController {
 		return mav;
 	}
 	
-	@RequestMapping(value="/processlogin", method=RequestMethod.POST)
-	public ModelAndView processLogin(@ModelAttribute("customer")@Valid Customer customer, HttpServletRequest req) throws SQLException {
-		ModelAndView mav = null;
-				
-		
-		CustomerDAO cDAO = new CustomerDAO();
-		System.out.println(customer);
-		Customer assignedCustomer = cDAO.getCustomerByEmail(customer.getEmail_address());
-		
-		if (assignedCustomer != null && cDAO.validateCustomer(assignedCustomer.getPassword(), customer.getPassword())) {
-			HttpSession session = null;
-			session = req.getSession();
-			session.setAttribute("customer", customer);
-			mav = new ModelAndView("redirect:/");
-		} else {
-			mav = new ModelAndView("redirect:/login");
-		}
-		
-		return mav;
-	}
 	
 	@RequestMapping("/letters")
 	public ModelAndView displayLetters() {
@@ -106,6 +87,35 @@ public class HomeController {
 	@RequestMapping("/login")
 	public ModelAndView displayLoginPage(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("login");
+		return mav;
+	}
+	
+	@RequestMapping(value="/processlogin", method=RequestMethod.POST)
+	public ModelAndView processLogin(@RequestParam("email_address") String email_address,
+			@RequestParam("password") String password, HttpServletRequest req) throws SQLException {
+		ModelAndView mav = null;
+		
+		
+		CustomerDAO cDAO = new CustomerDAO();
+		Customer assignedCustomer = new Customer();
+		assignedCustomer =  cDAO.getCustomerByEmail(email_address);
+		
+//		System.out.println(customer);
+//		Customer assignedCustomer = cDAO.getCustomerByEmail(customer.getEmail_address());
+		
+		if (assignedCustomer !=null && cDAO.validateCustomer(assignedCustomer.getPassword(), password)) {
+			mav = new ModelAndView("redirect:/");
+			HttpSession session = null;
+			session = req.getSession();
+			session.setAttribute("email_address", email_address);
+			session.setAttribute("password", password);
+		} else {
+//			HttpSession session = null;
+//			HttpSession session = req.getSession();
+//			session.setAttribute("customer", new Customer());	
+			mav = new ModelAndView("redirect:/login");
+		}
+		
 		return mav;
 	}
 }
