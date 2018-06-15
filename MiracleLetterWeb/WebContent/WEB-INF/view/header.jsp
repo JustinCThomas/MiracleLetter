@@ -10,11 +10,17 @@
 <div id="header">
 
 	<a id="ml" href="/MiracleLetterWeb">MiracleLetter</a>
-	<div>Hello, you're logged in as <%=email_address %></div>
-	<a href="letters">View Letter Templates</a>
-	<a href="envelopes">View Envelopes</a>
-	<a href="registration">Sign Up</a>
-	<a href="login">Login</a>
-	<a href="cart">(Cart Symbol)<span id="itemsInCart">0</span></a>
+	<% if (email_address != null) {
+		out.print("<span id='email-display'>" + "Hello, you're logged in as " + email_address + "</span>");
+	}
+	%>
+	<nav>
+		<a href="letters">View Letter Templates</a>
+		<a href="envelopes">View Envelopes</a>
+		<a href="registration">Sign Up</a>
+		<a href="login">Login</a>
+		<a href="cart">(Cart Symbol)<span id="itemsInCart">0</span></a>
+	</nav>
+	
 
 </div>

@@ -1,5 +1,5 @@
 #header {
-	height: 70px;
+	height: 100px;
 	margin: 0 auto;
 	text-align: initial;
 	background-color: green;
@@ -7,7 +7,20 @@
 
 #ml {
 	font-size: 36px;
-	padding: 20px;
+	padding: 20px 20px 10px 10px;
 	display: inline-block;
 	text-decoration: none;
+}
+
+#email-display {
+	float: right;
+	padding: 20px;
+}
+
+nav {
+	margin-left: 10px;
+}
+
+nav > a {
+	margin: 0 5px;
 }

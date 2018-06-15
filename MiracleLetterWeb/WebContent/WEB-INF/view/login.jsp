@@ -11,31 +11,18 @@
 <title>MiracleLetter Login</title>
 </head>
 <body>
-	<!--<form:form method="POST" action="processlogin" modelAttribute="customer">
-		<form:label path="email_address">Email</form:label> 
-		<form:input type="text" name="email_address" path="email_address"/>
-		
-		
-		<form:label path="password">Password</form:label>
-		<form:input type="password" name="password" path="password"/>
-		
-		<input type="submit" name="submit" value="Submit">
-	
-	</form:form> -->
-	
-	
+	<h1>Sign in</h1>
+	${errorMessage}
 	<form method="POST" action="processlogin">
 		<label for="email_address">Email</label> 
-		<input type="text" name="email_address"/>
-		
+		<input type="text" name="email_address" required/>
 		
 		<label for="password">Password</label>
-		<input type="password" name="password"/>
+		<input type="password" name="password" required/>
 		
 		<input type="submit" name="submit" value="Submit">
-	
 	</form>
-
-
+	<p>Don't have an account yet?</p>
+	<a href="registration">Sign up here!</a>
 </body>
 </html>
