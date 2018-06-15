@@ -4,16 +4,15 @@ import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import miracleletter.dao.CustomerDAO;
 import miracleletter.models.Customer;
@@ -83,6 +82,30 @@ public class HomeController {
 		return mav;
 	}
 	
+	@RequestMapping("/processregistration")
+	public ModelAndView processRegistration(@RequestParam("email_address") String email_address,
+			@RequestParam("password") String password, RedirectAttributes attributes) throws SQLException {
+		ModelAndView mav = new ModelAndView("register");
+		
+		CustomerDAO cDAO = new CustomerDAO();
+		Customer customer= new Customer();
+		customer =  cDAO.getCustomerByEmail(email_address);
+		
+		if (customer == null) {
+			customer = new Customer();
+			customer.setEmail_address(email_address);
+			customer.setPassword(password);
+			cDAO.registerCustomer(customer);
+		} else {
+			attributes.addFlashAttribute("email", "<span>Email is already in use.</span>");
+			mav = new ModelAndView("redirect:registration");
+		}
+		
+		return mav;
+		
+		
+	}
+	
 	
 	@RequestMapping("/login")
 	public ModelAndView displayLoginPage(HttpServletRequest request) {
@@ -92,16 +115,14 @@ public class HomeController {
 	
 	@RequestMapping(value="/processlogin", method=RequestMethod.POST)
 	public ModelAndView processLogin(@RequestParam("email_address") String email_address,
-			@RequestParam("password") String password, HttpServletRequest req) throws SQLException {
+			@RequestParam("password") String password, HttpServletRequest req, RedirectAttributes attributes) throws SQLException {
 		ModelAndView mav = null;
 		
 		
 		CustomerDAO cDAO = new CustomerDAO();
 		Customer assignedCustomer = new Customer();
 		assignedCustomer =  cDAO.getCustomerByEmail(email_address);
-		
-//		System.out.println(customer);
-//		Customer assignedCustomer = cDAO.getCustomerByEmail(customer.getEmail_address());
+
 		
 		if (assignedCustomer !=null && cDAO.validateCustomer(assignedCustomer.getPassword(), password)) {
 			mav = new ModelAndView("redirect:/");
@@ -110,9 +131,7 @@ public class HomeController {
 			session.setAttribute("email_address", email_address);
 			session.setAttribute("password", password);
 		} else {
-//			HttpSession session = null;
-//			HttpSession session = req.getSession();
-//			session.setAttribute("customer", new Customer());	
+			attributes.addFlashAttribute("errorMessage", "<span>Username and password is incorrect.</span>");
 			mav = new ModelAndView("redirect:/login");
 		}
 		
