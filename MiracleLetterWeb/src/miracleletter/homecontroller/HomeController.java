@@ -85,19 +85,22 @@ public class HomeController {
 	@RequestMapping("/processregistration")
 	public ModelAndView processRegistration(@RequestParam("email_address") String email_address,
 			@RequestParam("password") String password, RedirectAttributes attributes) throws SQLException {
-		ModelAndView mav = new ModelAndView("register");
+		ModelAndView mav = null;
 		
 		CustomerDAO cDAO = new CustomerDAO();
 		Customer customer= new Customer();
 		customer =  cDAO.getCustomerByEmail(email_address);
 		
+//		Checks if a customer account exists for that email_address
 		if (customer == null) {
+			mav = new ModelAndView("redirect:/");
 			customer = new Customer();
 			customer.setEmail_address(email_address);
 			customer.setPassword(password);
 			cDAO.registerCustomer(customer);
+			attributes.addFlashAttribute("registerSuccess", "<span id='register-success'>Successfully registered!</span>");
 		} else {
-			attributes.addFlashAttribute("email", "<span>Email is already in use.</span>");
+			attributes.addFlashAttribute("emailInUse", "<span>Email is already in use.</span>");
 			mav = new ModelAndView("redirect:registration");
 		}
 		
@@ -124,7 +127,7 @@ public class HomeController {
 		assignedCustomer =  cDAO.getCustomerByEmail(email_address);
 
 		
-		if (assignedCustomer !=null && cDAO.validateCustomer(assignedCustomer.getPassword(), password)) {
+		if (assignedCustomer != null && cDAO.validateCustomer(assignedCustomer.getPassword(), password)) {
 			mav = new ModelAndView("redirect:/");
 			HttpSession session = null;
 			session = req.getSession();

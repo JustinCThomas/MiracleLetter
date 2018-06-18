@@ -20,8 +20,11 @@ public class OracleQueries {
 	public final static String LETTERTEMPLATEBYNAME = "SELECT * FROM letter_template "
 			+ "WHERE letter_template_name = ?";
 	
+	public final static String ALLENVELOPES = "SELECT * FROM envelope ";
+	
 	public final static String ENVELOPEBYID = "SELECT * FROM envelope "
 			+ "WHERE envelope_id = ?";
+	
 	
 	public final static String ORDERBYID = "SELECT * FROM order_table "
 			+ "WHERE order_id = ?";
