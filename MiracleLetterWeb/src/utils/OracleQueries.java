@@ -17,6 +17,8 @@ public class OracleQueries {
 	public final static String DELETECUSTOMERBYEMAIL = "DELETE FROM customer "
 			+ "WHERE email_address = ?";
 	
+	public final static String AllLETTERTEMPLATES = "SELECT * FROM letter_template ";
+	
 	public final static String LETTERTEMPLATEBYNAME = "SELECT * FROM letter_template "
 			+ "WHERE letter_template_name = ?";
 	
