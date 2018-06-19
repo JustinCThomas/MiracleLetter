@@ -1,6 +1,5 @@
 #header {
 	height: 100px;
-	margin: 0 auto;
 	text-align: initial;
 	background-color: green;
 }
@@ -15,6 +14,14 @@
 #email-display {
 	float: right;
 	padding: 20px;
+}
+
+#register-success {
+	font-size: 32px;
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	transform: translateX(-50%);	
 }
 
 nav {

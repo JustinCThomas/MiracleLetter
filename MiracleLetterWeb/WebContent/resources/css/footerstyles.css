@@ -1,12 +1,32 @@
+html, body {
+	height: 100%;
+}
+
+.content {
+	flex: 1 0 auto;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
 footer{
-	margin: 0 auto;
-	position: absolute;
-	bottom: 0;
+	margin-top: 40px;
 	height: 100px;
 	width: 100%;
 	background-color: olive;
 	font-size: 20px;
 	text-align: center;
+	flex-shrink: 0;
+}
+
+#link-container {
+	margin-top: 42px;
+	/*position: absolute;
+	top: 50%;
+	left: 50%;
+    transform: translate(-50%); */
 }
 
 footer a {

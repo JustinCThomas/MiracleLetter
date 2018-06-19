@@ -3,7 +3,6 @@
 
 <link type="text/css" rel="stylesheet" href="${headerstylesCSS}">
 
-<%@page import="miracleletter.models.Customer" %>
 <% String email_address = (String) session.getAttribute("email_address"); %>
 <% String password = (String) session.getAttribute("password"); %>
 
@@ -14,6 +13,7 @@
 		out.print("<span id='email-display'>" + "Hello, you're logged in as " + email_address + "</span>");
 	}
 	%>
+	${registerSuccess}
 	<nav>
 		<a href="letters">View Letter Templates</a>
 		<a href="envelopes">View Envelopes</a>

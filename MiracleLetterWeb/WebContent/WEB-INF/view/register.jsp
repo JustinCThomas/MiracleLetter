@@ -11,24 +11,11 @@
 <title>MiracleLetter Registration</title>
 </head>
 <body>
-<!--  	<form:form method="POST" action="/MiracleLetterWeb" modelAttribute="customer">
-		<form:label path="email_address">Email</form:label> 
-		<form:input path="email_address" type="text"/>
-		
-		
-		<form:label path="password">Password</form:label>
-		<form:input path="password" type="password"/>
-		
-		<input type="submit" value="Submit">
-	
-	</form:form>
-	-->
-	
+	${emailInUse}
 	<h1>Create new account</h1>
   	<form method="POST" action="processregistration">
 		<label for="email_address">Email</label> 
 		<input name="email_address" type="text" minlength="8" required/>
-		
 		
 		<label for="password">Password</label>
 		<input name="password" type="password" minlength="8" required/>
