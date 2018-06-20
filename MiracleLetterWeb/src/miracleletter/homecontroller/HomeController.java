@@ -46,6 +46,12 @@ public class HomeController {
 		return mav;
 	}
 	
+	@RequestMapping(value="/design")
+	public ModelAndView displayDesignPage() {
+		ModelAndView mav = new ModelAndView("design");
+		return mav;
+	}
+	
 	@RequestMapping("/about")
 	public ModelAndView displayAboutPage() {
 		ModelAndView mav = new ModelAndView("about");
