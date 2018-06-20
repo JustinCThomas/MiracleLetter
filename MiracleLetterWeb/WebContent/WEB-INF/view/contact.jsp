@@ -13,9 +13,14 @@
 <title>Contact Us</title>
 </head>
 <body>
+
+<div class="content">
 <%@include file="header.jsp"%>
 	<h1>Contact Us</h1>
 	<form>Form Placeholder</form>
+	
+</div>
+
 <%@include file="footer.jsp"%>
 </body>
 </html>

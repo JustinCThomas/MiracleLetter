@@ -13,7 +13,10 @@
 </head>
 <body>
 
+<div class="content">
 <%@include file="header.jsp"%>
+
+</div>
 
 <%@include file="footer.jsp"%>
 

@@ -26,5 +26,7 @@
 
 	<p>Already have an account?</p>
 	<a href="login">Sign in here!</a>
+	</br/>
+	<a href="/">Back to Homepage</a>
 </body>
 </html>

@@ -12,6 +12,8 @@
 <title>About Us</title>
 </head>
 <body>
+
+<div class="content">
 <%@include file="header.jsp"%>
 	<h1>About Us</h1>
 	<p>Lorem ipsum dolor sit amet, urna pharetra auctor nulla, diam donec cras massa orci a lacus, sit sit semper molestie lobortis, quisque lectus quis. Hymenaeos risus, pellentesque ipsum tincidunt elementum morbi non commodi, lacinia pulvinar neque rutrum etiam in, est justo morbi et urna rutrum vitae. Deleniti sed nec aliquam diam alias, reprehenderit potenti, nisl ut congue maecenas elit, eget ridiculus, ac quis dui quam curabitur. Justo sodales ante hac, in torquent at et egestas, nam risus sodales pede sodales vel, aenean orci. Hymenaeos nec tincidunt sodales morbi dolor mattis, purus vestibulum, etiam pellentesque nullam. Vel urna rhoncus eros sit sed sociosqu, feugiat ante vitae, est viverra donec felis mi, nibh leo augue, ante velit metus pede pretium erat. Lectus nunc. Rutrum ultricies pede eget volutpat, sit et, et quam lorem nascetur sollicitudin, nulla sit sed eu ac et natoque, metus duis.
@@ -22,6 +24,7 @@
 	
 	Ut eu non, amet pulvinar pretium cras nulla turpis ullamcorper. Aliquam purus lorem est inceptos diam a, lacinia a in, diam magna vero. Nec quis. Aliquam eu blandit eget sollicitudin, vel lacus justo imperdiet, felis ut suspendisse, suscipit pharetra ut, enim vitae vestibulum. Egestas amet amet tellus ut amet dolor, duis lacus. Mattis elit pellentesque. Urna donec dui imperdiet, porttitor phasellus tempus sit orci amet mauris. Ut vitae lectus, proin dolor luctus non ultrices, semper etiam. Auctor vestibulum quisque donec mauris, neque senectus in id libero amet massa.
 	</p>
+</div>
 <%@include file="footer.jsp"%>
 </body>
 </html>

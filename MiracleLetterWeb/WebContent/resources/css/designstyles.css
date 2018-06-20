@@ -1,0 +1,43 @@
+.letter-design {
+	height: 300px;
+	width: 450px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+
+.ocean {
+	background: url(/MiracleLetterWeb/resources/images/oceantemplate.svg);
+	background-size: cover; 
+}
+
+.sky {
+	background: url(/MiracleLetterWeb/resources/images/skytemplate.svg);
+	background-size: cover; 
+}
+
+.fruitbasket {
+	background: url(/MiracleLetterWeb/resources/images/fruitbaskettemplate.svg);
+	background-size: cover; 
+}
+
+textarea {
+	background-color: transparent;
+	color: white;
+	padding: 5px;
+	height: 255px;
+	width: 210px;
+	font-size: 18px;
+	font-family: sans-serif;
+	//font-weight: 700;
+	border: 0;
+	resize: none;
+	overflow: hidden;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}

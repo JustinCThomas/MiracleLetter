@@ -24,5 +24,7 @@
 	</form>
 	<p>Don't have an account yet?</p>
 	<a href="registration">Sign up here!</a>
+	</br/>
+	<a href="/">Back to Homepage</a>
 </body>
 </html>

@@ -17,9 +17,10 @@
 	<nav>
 		<a href="letters">View Letter Templates</a>
 		<a href="envelopes">View Envelopes</a>
+		<a href="design">Design</a>
 		<a href="registration">Sign Up</a>
 		<a href="login">Login</a>
-		<a href="cart">(Cart Symbol)<span id="itemsInCart">0</span></a>
+		<a href="cart">(Cart Symbol)<span id="itemsInCart"></span></a>
 	</nav>
 	
 
