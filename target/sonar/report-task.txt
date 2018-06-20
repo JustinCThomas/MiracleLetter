@@ -1,6 +1,0 @@
-projectKey=MiracleLetterWeb:MiracleLetterWeb
-serverUrl=http://localhost:9000
-serverVersion=6.7.4.38452
-dashboardUrl=http://localhost:9000/dashboard/index/MiracleLetterWeb:MiracleLetterWeb
-ceTaskId=AWP0jM3fRGonoSp5n1b7
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AWP0jM3fRGonoSp5n1b7
