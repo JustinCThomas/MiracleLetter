@@ -5,6 +5,7 @@
 <spring:url value="/resources/css/commonstyles.css" var="commonstylesCSS"/>
 <spring:url value="/resources/css/designstyles.css" var="designstylesCSS"/>
 <spring:url value="/resources/js/design.js" var="designJS"/>
+<spring:url value="/resources/js/cropper.js" var="cropperJS"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,12 +30,12 @@
 	<option value="sky">Sky</option>
 </select>
 
-<div id="base-letter">
-</div>
+<div id="base-letter"></div>
 
 </div>
 
 <%@include file="footer.jsp"%>
 <script src="${designJS}"></script>
+<script src="${cropperJS}"></script>
 </body>
 </html>
