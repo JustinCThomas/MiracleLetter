@@ -110,9 +110,7 @@ public class HomeController {
 			mav = new ModelAndView("redirect:registration");
 		}
 		
-		return mav;
-		
-		
+		return mav;	
 	}
 	
 	
@@ -142,8 +140,7 @@ public class HomeController {
 		} else {
 			attributes.addFlashAttribute("errorMessage", "<span>Username and password is incorrect.</span>");
 			mav = new ModelAndView("redirect:/login");
-		}
-		
+		}	
 		return mav;
 	}
 }
