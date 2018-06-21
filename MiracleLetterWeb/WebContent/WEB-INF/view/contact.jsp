@@ -17,7 +17,14 @@
 <div class="content">
 <%@include file="header.jsp"%>
 	<h1>Contact Us</h1>
-	<form>Form Placeholder</form>
+	<form action="#">
+	
+		<textarea rows="8" col="50" name="comments">
+		
+		</textarea>
+		
+		<input type="submit" name="submit" value="Submit">
+	</form>
 	
 </div>
 

@@ -9,14 +9,14 @@ th, td {
 	padding: 2px 10px;
 }
 
-#envelope {
+.envelope {
   height: 50px;
   width: 110px;
   position: relative;
   border-radius: 2px;
 }
 
-#window {
+.window {
   height: 15px;
   width: 40px;
   background-color: grey;

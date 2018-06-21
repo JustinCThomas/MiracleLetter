@@ -9,12 +9,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link type="text/css" rel="stylesheet" href="${resetCSS}"/>
 <link type="text/css" rel="stylesheet" href="${commonstylesCSS}"/>
+<%@page import="java.util.List" %>
+<% List<String> template_choice = (List<String>) session.getAttribute("template_choice"); %>
 <title>MiracleLetter Shopping Cart</title>
 </head>
 <body>
 
 <div class="content">
 <%@include file="header.jsp"%>
+
+<h2>You have <%=template_choice %> items in cart</h2>
+
 
 </div>
 

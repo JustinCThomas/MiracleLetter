@@ -16,6 +16,14 @@
 <div class="content">
 <%@include file="header.jsp"%>
 
+<ol>
+	<li>How long does it take for mail to arrive? Mail arrives within 3 to 5 business days.</li>
+	<li>Do you ship internationally? Unfortunately, we only ship within the USA and Canada.</li>
+	<li>Can I order same day delivery? No.</li>
+	<li>How long have you been in business? For as long as the internet has been around. We are veterans.</li>
+</ol>
+
+
 </div>
 
 <%@include file="footer.jsp"%>

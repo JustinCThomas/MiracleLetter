@@ -38,7 +38,7 @@
 		<th>Price</th>	
 	</tr>
 	<tr>
-		<td><div id="envelope" class="white"></div></td>
+		<td><div class="envelope white"></div></td>
 		<%
 			out.print("<td>" + envelopes.get(0).getEnvelope_color() + "</td>");
 			out.print("<td>" + envelopes.get(0).getEnvelope_type() + "</td>");
@@ -46,7 +46,7 @@
 		%>
 	</tr>
 	<tr>
-		<td><div id="envelope" class="white"><div id="window"></div></div></td>
+		<td><div class="envelope white"><div class="window"></div></div></td>
 		<%
 			out.print("<td>" + envelopes.get(1).getEnvelope_color() + "</td>");
 			out.print("<td>" + envelopes.get(1).getEnvelope_type() + "</td>");
@@ -54,7 +54,7 @@
 		%>
 	</tr>
 	<tr>
-		<td><div id="envelope" class="blue"></div></td>
+		<td><div class="envelope blue"></div></td>
 		<%
 			out.print("<td>" + envelopes.get(2).getEnvelope_color() + "</td>");
 			out.print("<td>" + envelopes.get(2).getEnvelope_type() + "</td>");
@@ -62,7 +62,7 @@
 		%>
 	</tr>
 	<tr>
-		<td><div id="envelope" class="blue"><div id="window"></div></div></td>
+		<td><div class="envelope blue"><div class="window"></div></div></td>
 		<%
 			out.print("<td>" + envelopes.get(3).getEnvelope_color() + "</td>");
 			out.print("<td>" + envelopes.get(3).getEnvelope_type() + "</td>");
@@ -70,7 +70,7 @@
 		%>
 	</tr>
 	<tr>
-		<td><div id="envelope" class="red"></div></td>
+		<td><div class="envelope red"></div></td>
 		<%
 			out.print("<td>" + envelopes.get(4).getEnvelope_color() + "</td>");
 			out.print("<td>" + envelopes.get(4).getEnvelope_type() + "</td>");
@@ -78,7 +78,7 @@
 		%>
 	</tr>
 	<tr>
-		<td><div id="envelope" class="red"><div id="window"></div></div></td>
+		<td><div class="envelope red"><div class="window"></div></div></td>
 		<%
 			out.print("<td>" + envelopes.get(5).getEnvelope_color() + "</td>");
 			out.print("<td>" + envelopes.get(5).getEnvelope_type() + "</td>");

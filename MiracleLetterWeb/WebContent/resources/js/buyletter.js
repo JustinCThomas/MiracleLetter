@@ -13,14 +13,9 @@ let fruitbasketimg = document.createElement("div");
 fruitbasketimg.classList.add("letter-design");
 fruitbasketimg.classList.add("fruitbasket");
 
-let textarea1 = document.createElement("textarea");
-textarea1.classList.add("float-left");
-let textarea2 = document.createElement("textarea");
-textarea2.classList.add("float-right");
-
 
 templateChoice.addEventListener("click", function(){
-	console.log("clicked");
+	console.log("clicked letter");
 	displayTemplate(templateChoice.value);
 });
 
@@ -30,18 +25,12 @@ function displayTemplate(choice){
 	switch (choice) {
 	case "ocean":
 		baseLetter.appendChild(oceanimg);
-		oceanimg.appendChild(textarea1);
-		oceanimg.appendChild(textarea2);
 		break;
 	case "sky":
 		baseLetter.appendChild(skyimg);
-		skyimg.appendChild(textarea1);
-		skyimg.appendChild(textarea2);
 		break;
 	case "fruitbasket":
 		baseLetter.appendChild(fruitbasketimg);
-		fruitbasketimg.appendChild(textarea1);
-		fruitbasketimg.appendChild(textarea2);
 		break;
 	}
 }

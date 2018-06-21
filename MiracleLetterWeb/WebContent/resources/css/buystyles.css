@@ -1,0 +1,71 @@
+#letter-option, #envelope-option {
+	display: inline-block;
+	margin-top: 30px;
+}
+
+.letter-design {
+	height: 200px;
+	width: 300px;
+}
+
+.ocean {
+	background: url(/MiracleLetterWeb/resources/images/oceantemplate.svg);
+	background-size: cover; 
+}
+
+.sky {
+	background: url(/MiracleLetterWeb/resources/images/skytemplate.svg);
+	background-size: cover; 
+}
+
+.fruitbasket {
+	background: url(/MiracleLetterWeb/resources/images/fruitbaskettemplate.svg);
+	background-size: cover; 
+}
+
+.envelope {
+  height: 50px;
+  width: 110px;
+  position: relative;
+  border-radius: 2px;
+}
+
+.window {
+  height: 15px;
+  width: 40px;
+  background-color: grey;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  border-radius: 4px;
+}
+
+.white {
+	background-color: rgb(240, 240, 240);
+}
+
+.blue {
+	background-color: blue;
+}
+
+.red {
+	background-color: red;
+}
+
+#base-letter {
+	height: 200px;
+	width: 300px;
+	display: inline-block;
+	margin-top: 30px;
+	//margin-right: 40px;
+	margin-bottom: 30px;
+}
+
+#base-envelope {
+	height: 200px;
+	width: 300px;
+	display: inline-block;
+	margin-top: 30px;
+	margin-left: 40px;
+	margin-bottom: 30px;
+}
