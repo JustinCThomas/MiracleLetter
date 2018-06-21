@@ -1,6 +1,8 @@
 package miracleletter.homecontroller;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -52,6 +54,24 @@ public class HomeController {
 		return mav;
 	}
 	
+	@RequestMapping(value="/buy")
+	public ModelAndView displayBuyingPage(HttpServletRequest req, RedirectAttributes attributes) {
+		ModelAndView mav = null;
+		
+		HttpSession session = null;
+		session = req.getSession();
+		String email_address = (String) session.getAttribute("email_address"); 
+		
+		if (email_address != null) {
+			mav = new ModelAndView("buy");
+		} else {
+			mav = new ModelAndView("redirect:/");
+			attributes.addFlashAttribute("errorMessage", "<span>Can only access \"buy\" page when logged in.</span>");
+		}
+			
+		return mav;
+	}
+	
 	@RequestMapping("/about")
 	public ModelAndView displayAboutPage() {
 		ModelAndView mav = new ModelAndView("about");
@@ -72,6 +92,40 @@ public class HomeController {
 	
 	@RequestMapping("/cart")
 	public ModelAndView displayCart() {
+		ModelAndView mav = new ModelAndView("cart");
+		return mav;
+	}
+	
+	@RequestMapping(value="/processcart", method=RequestMethod.POST)
+	public ModelAndView processCart(@RequestParam("template-choice") String template_choice,
+			@RequestParam("envelope-type") String envelope_type, HttpServletRequest req, RedirectAttributes attributes) {
+		
+		List<String> letterChoices = new ArrayList<String>();
+		List<String> envelopeChoices = new ArrayList<String>();
+		
+		HttpSession session = null;
+		session = req.getSession();
+		
+		if (session.getAttribute(template_choice) == null &&
+			session.getAttribute(envelope_type) == null) {
+			letterChoices.add(template_choice);
+			envelopeChoices.add(envelope_type);
+			
+		} else {
+			letterChoices = (List<String>) session.getAttribute(template_choice);
+			letterChoices.add(template_choice);
+			
+			envelopeChoices = (List<String>) session.getAttribute(envelope_type);
+			envelopeChoices.add(envelope_type);
+			
+			System.out.println(template_choice);
+			System.out.println(envelope_type);
+		}
+		
+
+		session.setAttribute("template_choice", template_choice);
+		session.setAttribute("envelope_type", envelope_type);
+		
 		ModelAndView mav = new ModelAndView("cart");
 		return mav;
 	}
