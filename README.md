@@ -21,11 +21,11 @@ JUnit 4 must be properly configured in order to run the test cases.
 The test cases make use of Oracle JDBC and Hamcrest, so they too must be downloaded.
 
 ## Bugs
-* Adding to cart displays Null
-* Design page can be accessed without being logged in
+* Adding to cart displays Null.
+* Design page can be accessed without being logged in.
 
 ## Incomplete
-* Contact Us form data is not used by the backend
+* Contact Us form data is not being used by the backend.
 * User cannot place an order.
 * Login and Sign Up page need more styling.
 * Once logged in, login and sign up options should be missing and replaced with a log out option.
@@ -38,7 +38,7 @@ The test cases make use of Oracle JDBC and Hamcrest, so they too must be downloa
 * JSP - Java Server Pages
 * Maven - Dependency Management for Java
 * JUnit 4 - Runs Test Cases for Java projects
-* [SVG Editor](http://editor.method.ac/) - For making one of the letters templates
+* [SVG Editor](http://editor.method.ac/) - For making one of the letter templates
 
 ## User Stories
 1.	As a user I can sign up.
@@ -48,9 +48,9 @@ The test cases make use of Oracle JDBC and Hamcrest, so they too must be downloa
 5.	As a user I can change my password. (Next Sprint)
 6.	As a user I can customize a letter.
 7.	As a user I can add a customized letter and chosen envelope to cart. (Next Sprint)
-8.	As a user I can place an order (Next Sprint)
+8.	As a user I can place an order. (Next Sprint)
 9.	As a user I can see previously placed orders and their details. (Next Sprint)
-10.	As a user I can delete an order (Next Sprint)
+10.	As a user I can delete an order. (Next Sprint)
 
 
 ## Author
